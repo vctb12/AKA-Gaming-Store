@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AKA Gaming Store</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -16,10 +16,36 @@
     </nav>
   </header>
 
-  <section id="products"></section>
+  <main>
+    <section id="hero">
+      <h2>Level Up Your Setup</h2>
+      <p>Gaming PCs, parts & custom builds — shipped across the UAE</p>
+      <button onclick="scrollToProducts()">Shop Now</button>
+    </section>
+
+    <section id="products">
+      <h2>Featured Products</h2>
+      <div id="product-list"></div>
+    </section>
+
+    <section id="newsletter">
+      <h2>📩 Get new deals straight to your inbox</h2>
+      <form action="https://formspree.io/f/yourFormID" method="POST">
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>📍 Al Ain Computer Center</p>
+      <p>📞 WhatsApp: 00971505058609</p>
+      <p>✉️ Email: akagaming@store.ae</p>
+    </section>
+  </main>
 
   <footer>
-    <p>WhatsApp: 00971505058609 | Email: akagaming@store.ae</p>
+    <p>© 2025 AKA Gaming Store | All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
