@@ -1,1 +1,42 @@
-[{"id":1,"name":"Gaming PC","price":4999,"stock":10}]
+[
+    {
+        "id": 1,
+        "name": "Gaming PC \u2013 RTX 4070 + Ryzen 7",
+        "price": 4999,
+        "currency": "AED",
+        "category": "Full Setups",
+        "stock": 3,
+        "image": "https://m.media-amazon.com/images/I/71P2aaQnJJL.jpg",
+        "description": "High-performance gaming rig with RTX 4070, Ryzen 7 5800X, 32GB RAM, 1TB SSD."
+    },
+    {
+        "id": 2,
+        "name": "LG UltraGear 27\u201d QHD 144Hz Monitor",
+        "price": 999,
+        "currency": "AED",
+        "category": "Accessories",
+        "stock": 5,
+        "image": "https://www.lg.com/ae/images/monitors/MD06226097/gallery/M-1.jpg",
+        "description": "27-inch QHD monitor with 144Hz refresh rate and 1ms response time."
+    },
+    {
+        "id": 3,
+        "name": "Logitech G Pro Mechanical Keyboard",
+        "price": 399,
+        "currency": "AED",
+        "category": "Accessories",
+        "stock": 8,
+        "image": "https://microless.com/cdn/products/6a900df7ab458dedf3060ae6e1bdbcee-hi.jpg",
+        "description": "Compact, tournament-grade keyboard with GX Blue switches."
+    },
+    {
+        "id": 4,
+        "name": "Custom Watercooling Service",
+        "price": 1500,
+        "currency": "AED",
+        "category": "Services",
+        "stock": 10,
+        "image": "https://us.v-cdn.net/6036147/uploads/6XUM4EID35QX/why-liquid-cooling-for-pc-is-overrated.jpg",
+        "description": "Professional custom loop setup for CPU/GPU cooling. Price includes parts + labor."
+    }
+]
