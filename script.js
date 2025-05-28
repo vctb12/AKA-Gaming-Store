@@ -1,93 +1,58 @@
-// script.js – AKA Gaming Store v1.5
+// ✅ script.js (v1.5 unified logic)
 
-let cart = [];
-let products = [];
-
-// Load products from JSON
+// Load and display products
 fetch('products.json')
-  .then(response => response.json())
-  .then(data => {
-    products = data;
-    renderProducts();
+  .then((res) => res.json())
+  .then((products) => {
+    const container = document.getElementById('product-container');
+    if (container) {
+      container.innerHTML = products.map((p) => `
+        <div class="product">
+          <img src="${p.image}" alt="${p.name}" />
+          <h3>${p.name}</h3>
+          <p>${p.description}</p>
+          <strong>${p.price} AED</strong>
+          <button onclick="addToCart(${p.id})">Add to Cart</button>
+        </div>
+      `).join('');
+    }
   });
 
-function renderProducts() {
-  const productGrid = document.getElementById('product-grid');
-  if (!productGrid) return;
-  productGrid.innerHTML = '';
-
-  products.forEach(product => {
-    const card = document.createElement('div');
-    card.className = 'product-card';
-    card.innerHTML = `
-      <img src="${product.image}" alt="${product.name}" />
-      <h3>${product.name}</h3>
-      <p>${product.price} AED</p>
-      <p>${product.stock > 0 ? `<span class='in-stock'>In stock</span>` : `<span class='out-stock'>Out of stock</span>`}</p>
-      <button onclick="addToCart(${product.id})" ${product.stock === 0 ? 'disabled' : ''}>Add to Cart</button>
-    `;
-    productGrid.appendChild(card);
-  });
-}
-
+// Add to Cart
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 function addToCart(id) {
-  const product = products.find(p => p.id === id);
-  if (!product || product.stock === 0) return;
-
-  const item = cart.find(p => p.id === id);
-  if (item) {
-    item.qty++;
-  } else {
-    cart.push({ ...product, qty: 1 });
-  }
-  updateCartDisplay();
+  cart.push(id);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert('Added to cart!');
 }
 
-function updateCartDisplay() {
-  const cartList = document.getElementById('cart-list');
-  const cartTotal = document.getElementById('cart-total');
-  if (!cartList || !cartTotal) return;
+// Display Cart Items and Checkout Logic
+function renderCart() {
+  const cartList = document.getElementById('cart-items');
+  const totalBox = document.getElementById('checkout-total');
+  const vatBox = document.getElementById('checkout-vat');
+  const discountBox = document.getElementById('checkout-discount');
 
-  cartList.innerHTML = '';
-  let subtotal = 0;
+  fetch('products.json')
+    .then((res) => res.json())
+    .then((products) => {
+      const items = cart.map((id) => products.find((p) => p.id === id));
+      let subtotal = items.reduce((sum, item) => sum + item.price, 0);
 
-  cart.forEach(item => {
-    subtotal += item.price * item.qty;
-    const li = document.createElement('li');
-    li.innerHTML = `${item.name} x ${item.qty} - ${item.price * item.qty} AED <button onclick="removeFromCart(${item.id})">Remove</button>`;
-    cartList.appendChild(li);
-  });
+      let discount = subtotal >= 500 ? 0.15 * subtotal : 0;
+      let vat = subtotal >= 5000 ? 0 : 0.05 * (subtotal - discount);
+      let total = subtotal - discount + vat;
 
-  const discount = subtotal >= 500 ? subtotal * 0.15 : 0;
-  const vat = (subtotal - discount >= 5000) ? 0 : (subtotal - discount) * 0.05;
-  const total = subtotal - discount + vat;
+      if (cartList) {
+        cartList.innerHTML = items.map((item) => `<li>${item.name} - ${item.price} AED</li>`).join('');
+      }
 
-  cartTotal.innerHTML = `
-    Subtotal: ${subtotal.toFixed(2)} AED<br>
-    Discount: -${discount.toFixed(2)} AED<br>
-    VAT (5%): ${vat.toFixed(2)} AED<br>
-    <strong>Total: ${total.toFixed(2)} AED</strong>
-  `;
+      if (discountBox) discountBox.innerText = `- ${discount.toFixed(2)} AED`;
+      if (vatBox) vatBox.innerText = `+ ${vat.toFixed(2)} AED`;
+      if (totalBox) totalBox.innerText = `${total.toFixed(2)} AED`;
+    });
 }
 
-function removeFromCart(id) {
-  cart = cart.filter(item => item.id !== id);
-  updateCartDisplay();
+if (document.getElementById('cart-items')) {
+  renderCart();
 }
-
-// Newsletter Form Handling
-const newsletterForm = document.getElementById('newsletter-form');
-if (newsletterForm) {
-  newsletterForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = newsletterForm.querySelector('input[name="email"]').value;
-    alert(`Subscribed with ${email}`); // Replace with Formspree logic if needed
-  });
-}
-
-// Navigation Highlight
-const navLinks = document.querySelectorAll('nav a');
-navLinks.forEach(link => {
-  if (window.location.href.includes(link.getAttribute('href')))
-    link.classList.add('active');
-});
