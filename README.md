@@ -1,7 +1,3 @@
-# AKA Gaming Store
+# AKA Gaming Store v1.1
 
-## Version 1.1
-- VAT + Discount logic
-- Formspree
-- Blog posts
-- Dark mode toggle
+This is the production-ready version with full structure, logic, and deployment support.
