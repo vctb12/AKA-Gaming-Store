@@ -1,42 +1,93 @@
-[
+{
+  "products": [
     {
-        "id": 1,
-        "name": "Gaming PC \u2013 RTX 4070 + Ryzen 7",
-        "price": 4999,
-        "currency": "AED",
-        "category": "Full Setups",
-        "stock": 3,
-        "image": "https://m.media-amazon.com/images/I/71P2aaQnJJL.jpg",
-        "description": "High-performance gaming rig with RTX 4070, Ryzen 7 5800X, 32GB RAM, 1TB SSD."
+      "id": 1,
+      "name": "Gaming PC RTX 4090 Build",
+      "price": 15999,
+      "category": "Full Setups",
+      "image": "https://m.media-amazon.com/images/I/71P2aaQnJJL.jpg",
+      "description": "Ultimate gaming powerhouse with RTX 4090, i9-13900K, 32GB DDR5",
+      "stock": 3,
+      "warranty": "2 Years",
+      "brand": "Custom Build",
+      "features": ["RTX 4090 24GB", "Intel i9-13900K", "32GB DDR5", "2TB NVMe SSD"]
     },
     {
-        "id": 2,
-        "name": "LG UltraGear 27\u201d QHD 144Hz Monitor",
-        "price": 999,
-        "currency": "AED",
-        "category": "Accessories",
-        "stock": 5,
-        "image": "https://www.lg.com/ae/images/monitors/MD06226097/gallery/M-1.jpg",
-        "description": "27-inch QHD monitor with 144Hz refresh rate and 1ms response time."
+      "id": 2,
+      "name": "ROG Strix RTX 4080 Graphics Card",
+      "price": 4899,
+      "category": "PC Parts",
+      "image": "https://us.v-cdn.net/6036147/uploads/6XUM4EID35QX/why-liquid-cooling-for-pc-is-overrated.jpg",
+      "description": "ASUS ROG Strix RTX 4080 16GB GDDR6X Gaming Graphics Card",
+      "stock": 7,
+      "warranty": "3 Years",
+      "brand": "ASUS",
+      "features": ["16GB GDDR6X", "Ray Tracing", "DLSS 3", "RGB Lighting"]
     },
     {
-        "id": 3,
-        "name": "Logitech G Pro Mechanical Keyboard",
-        "price": 399,
-        "currency": "AED",
-        "category": "Accessories",
-        "stock": 8,
-        "image": "https://microless.com/cdn/products/6a900df7ab458dedf3060ae6e1bdbcee-hi.jpg",
-        "description": "Compact, tournament-grade keyboard with GX Blue switches."
+      "id": 3,
+      "name": "Gaming Mechanical Keyboard RGB",
+      "price": 399,
+      "category": "Accessories",
+      "image": "https://microless.com/cdn/products/6a900df7ab458dedf3060ae6e1bdbcee-hi.jpg",
+      "description": "Mechanical gaming keyboard with Cherry MX switches and RGB",
+      "stock": 15,
+      "warranty": "1 Year",
+      "brand": "Corsair",
+      "features": ["Cherry MX Red", "RGB Backlighting", "Macro Keys", "USB Passthrough"]
     },
     {
-        "id": 4,
-        "name": "Custom Watercooling Service",
-        "price": 1500,
-        "currency": "AED",
-        "category": "Services",
-        "stock": 10,
-        "image": "https://us.v-cdn.net/6036147/uploads/6XUM4EID35QX/why-liquid-cooling-for-pc-is-overrated.jpg",
-        "description": "Professional custom loop setup for CPU/GPU cooling. Price includes parts + labor."
+      "id": 4,
+      "name": "Intel Core i9-13900K Processor",
+      "price": 2199,
+      "category": "PC Parts",
+      "image": "https://www.lg.com/ae/images/monitors/MD06226097/gallery/M-1.jpg",
+      "description": "Latest generation Intel processor for extreme gaming performance",
+      "stock": 5,
+      "warranty": "3 Years",
+      "brand": "Intel",
+      "features": ["24 Cores", "5.8GHz Boost", "36MB Cache", "LGA1700"]
+    },
+    {
+      "id": 5,
+      "name": "Gaming Headset 7.1 Surround",
+      "price": 299,
+      "category": "Accessories",
+      "image": "https://m.media-amazon.com/images/I/71P2aaQnJJL.jpg",
+      "description": "Premium gaming headset with 7.1 surround sound and noise cancellation",
+      "stock": 12,
+      "warranty": "2 Years",
+      "brand": "SteelSeries",
+      "features": ["7.1 Surround", "Noise Cancelling", "RGB", "Wireless"]
+    },
+    {
+      "id": 25,
+      "name": "Extreme Gaming PC RTX 4090 Build",
+      "price": 22999,
+      "category": "Full Setups",
+      "image": "https://via.placeholder.com/300x200/000/00ffff?text=Extreme+PC",
+      "description": "Ultimate workstation with RTX 4090, i9-13900KS, 64GB DDR5, custom loop",
+      "stock": 1,
+      "warranty": "3 Years",
+      "brand": "Custom Build",
+      "features": ["RTX 4090 24GB", "i9-13900KS", "64GB DDR5", "Custom Water Cooling"]
     }
-]
+  ],
+  "categories": [
+    "PC Parts",
+    "Accessories", 
+    "Full Setups",
+    "Services"
+  ],
+  "brands": [
+    "ASUS",
+    "MSI",
+    "Corsair",
+    "Intel",
+    "AMD",
+    "NVIDIA",
+    "SteelSeries",
+    "Razer",
+    "Logitech"
+  ]
+}
