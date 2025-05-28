@@ -1,122 +1,126 @@
-
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  background-color: #111;
-  color: #0ff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  line-height: 1.6;
+  padding: 1rem;
 }
 
+/* Header & Nav */
 header {
-  background-color: #000;
-  padding: 10px 0;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  margin: 0 20px;
-}
-
-a {
-  color: cyan;
-  text-decoration: none;
-}
-
-main {
-  padding: 40px 20px;
+  background: #121212;
+  padding: 1rem;
   text-align: center;
 }
-
-.hero h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: cyan;
-  color: #000;
-  border-radius: 5px;
-}
-
-.featured {
-  margin-top: 50px;
-}
-
-.product-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.product-list li {
-  margin: 10px 0;
-  font-size: 1.1em;
-}
-
-footer {
-  background-color: #000;
+header h1 {
+  font-size: 2rem;
   color: #0ff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
 }
-
-.footer-contact p {
-  margin: 5px 0;
+nav {
+  margin-top: 1rem;
 }
-
-
-nav ul li a.active {
-  border-bottom: 2px solid cyan;
+nav a {
+  color: #ccc;
+  margin: 0 1rem;
+  text-decoration: none;
   font-weight: bold;
 }
+nav a.active {
+  color: #0ff;
+}
 
+/* Main Layout */
+main {
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+h2 {
+  margin-bottom: 1rem;
+  color: #0ff;
+}
+section {
+  margin-bottom: 2rem;
+}
 
-/* Mobile responsive tweaks */
+/* Cart Summary */
+.cart-summary ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+.cart-summary li {
+  background: #1a1a1a;
+  padding: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+.cart-summary strong {
+  color: #fff;
+}
+
+/* Checkout Form */
+.checkout-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+  width: 100%;
+  padding: 0.5rem;
+  background: #222;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+.checkout-form button {
+  background: #0ff;
+  color: #000;
+  padding: 0.75rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Totals Highlighting */
+#checkout-total {
+  font-size: 1.4rem;
+  color: #0f0;
+}
+#checkout-discount {
+  color: #f90;
+}
+#checkout-vat {
+  color: #ff4444;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1rem;
+  background: #121212;
+  border-top: 1px solid #222;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  body {
-    padding: 10px;
-    font-size: 16px;
+  main {
+    padding: 1rem;
   }
-
-  nav ul {
+  nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  footer {
-    text-align: center;
-    font-size: 14px;
-  }
-
-  .cta-button {
-    width: 100%;
+  .checkout-container {
     display: block;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  .featured-products {
-    display: block;
-    padding: 10px;
-  }
-
-  section {
-    margin-bottom: 40px;
   }
 }
