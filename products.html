@@ -1,48 +1,52 @@
+import json
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Products | AKA Gaming Store</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html" class="active">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+# Re-defining the sample product entries after environment reset
+products = [
+    {
+        "id": 1,
+        "name": "Gaming PC – RTX 4070 + Ryzen 7",
+        "price": 4999,
+        "currency": "AED",
+        "category": "Full Setups",
+        "stock": 3,
+        "image": "https://m.media-amazon.com/images/I/71P2aaQnJJL.jpg",
+        "description": "High-performance gaming rig with RTX 4070, Ryzen 7 5800X, 32GB RAM, 1TB SSD."
+    },
+    {
+        "id": 2,
+        "name": "LG UltraGear 27” QHD 144Hz Monitor",
+        "price": 999,
+        "currency": "AED",
+        "category": "Accessories",
+        "stock": 5,
+        "image": "https://www.lg.com/ae/images/monitors/MD06226097/gallery/M-1.jpg",
+        "description": "27-inch QHD monitor with 144Hz refresh rate and 1ms response time."
+    },
+    {
+        "id": 3,
+        "name": "Logitech G Pro Mechanical Keyboard",
+        "price": 399,
+        "currency": "AED",
+        "category": "Accessories",
+        "stock": 8,
+        "image": "https://microless.com/cdn/products/6a900df7ab458dedf3060ae6e1bdbcee-hi.jpg",
+        "description": "Compact, tournament-grade keyboard with GX Blue switches."
+    },
+    {
+        "id": 4,
+        "name": "Custom Watercooling Service",
+        "price": 1500,
+        "currency": "AED",
+        "category": "Services",
+        "stock": 10,
+        "image": "https://us.v-cdn.net/6036147/uploads/6XUM4EID35QX/why-liquid-cooling-for-pc-is-overrated.jpg",
+        "description": "Professional custom loop setup for CPU/GPU cooling. Price includes parts + labor."
+    }
+]
 
-  <main>
-    <h1>Our Products</h1>
+# Save to products.json file
+file_path = "/mnt/data/products.json"
+with open(file_path, "w") as f:
+    json.dump(products, f, indent=4)
 
-    <!-- 🔍 Filter Bar -->
-    <section class="filter-bar">
-      <input type="text" id="searchInput" placeholder="Search products..." />
-      <select id="brandFilter">
-        <option value="">All Brands</option>
-        <option value="ASUS">ASUS</option>
-        <option value="MSI">MSI</option>
-        <option value="Corsair">Corsair</option>
-      </select>
-      <select id="stockFilter">
-        <option value="">All Stock</option>
-        <option value="in">In Stock</option>
-        <option value="out">Out of Stock</option>
-      </select>
-    </section>
-
-    <!-- 🖥️ Products Grid -->
-    <section id="productList" class="grid"></section>
-  </main>
-
-  <footer>
-    <p>© 2025 AKA Gaming Store | All rights reserved</p>
-  </footer>
-</body>
-</html>
+file_path
