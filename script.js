@@ -1,54 +1,4 @@
-// AKA Gaming Store - Main JavaScript Functionality
-class AKAStore {
-  constructor() {
-    this.cart = JSON.parse(localStorage.getItem('akagaming-cart')) || [];
-    this.wishlist = JSON.parse(localStorage.getItem('akagaming-wishlist')) || [];
-    this.products = [];
-    this.dealOfTheWeek = null;
-    this.init();
-  }
 
-  async init() {
-    await this.loadProducts();
-    this.setupDealOfTheWeek();
-    this.setupEventListeners();
-    this.updateCartCount();
-    this.renderProducts();
-    this.showNewsletterPopup();
-  }
-
-  async loadProducts() {
-    // Real product data for AKA Gaming Store
-    this.products = [
-      {
-        id: 1,
-        name: "Gaming PC RTX 4090 Build",
-        price: 15999,
-        category: "Full Setups",
-        image: "https://via.placeholder.com/300x200/000/00ffff?text=RTX+4090+PC",
-        description: "Ultimate gaming powerhouse with RTX 4090, i9-13900K, 32GB DDR5",
-        stock: 3,
-        warranty: "2 Years"
-      },
-      {
-        id: 2,
-        name: "ROG Strix RTX 4080 Graphics Card",
-        price: 4899,
-        category: "PC Parts",
-        image: "https://via.placeholder.com/300x200/000/00ffff?text=RTX+4080",
-        description: "ASUS ROG Strix RTX 4080 16GB GDDR6X Gaming Graphics Card",
-        stock: 7,
-        warranty: "3 Years"
-      },
-      {
-        id: 3,
-        name: "Gaming Mechanical Keyboard RGB",
-        price: 399,
-        category: "Accessories",
-        image: "https://via.placeholder.com/300x200/000/00ffff?text=RGB+Keyboard",
-        description: "Mechanical gaming keyboard with Cherry MX switches and RGB",
-        stock: 15,
-        warranty: "1 Year"
       },
       {
         id: 4,
@@ -540,6 +490,43 @@ class AKAStore {
   }
 
   // Newsletter popup functionality
+  renderDealOfTheWeek() {
+    const dealContainer = document.getElementById('deal-of-week');
+    if (!dealContainer || !this.dealOfTheWeek) return;
+
+    const deal = this.dealOfTheWeek;
+    const isWishlisted = this.wishlist.some(item => item.id === deal.id);
+    
+    dealContainer.innerHTML = `
+      <div class="deal-product">
+        <div class="deal-image">
+          <img src="${deal.image}" alt="${deal.name}" loading="lazy">
+          <div class="deal-badge-large">20% OFF</div>
+        </div>
+        <div class="deal-content">
+          <h3>${deal.name}</h3>
+          <p>${deal.description}</p>
+          <div class="deal-pricing">
+            <span class="original-price-large">AED ${deal.originalPrice.toLocaleString()}</span>
+            <span class="deal-price">AED ${deal.price.toLocaleString()}</span>
+            <span class="savings">Save AED ${(deal.originalPrice - deal.price).toLocaleString()}</span>
+          </div>
+          <div class="deal-actions">
+            <button onclick="store.addToCart(${deal.id})" class="deal-buy-btn">
+              🛒 Add to Cart - Limited Time!
+            </button>
+            <button onclick="store.toggleWishlist(${deal.id})" class="wishlist-btn ${isWishlisted ? 'wishlisted' : ''}">
+              ${isWishlisted ? '❤️ Saved' : '🤍 Save for Later'}
+            </button>
+          </div>
+          <div class="deal-timer">
+            ⏰ Deal expires in: <span id="deal-countdown">6 days, 23 hours</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
   showNewsletterPopup() {
     // Show popup after 30 seconds or when user scrolls 50%
     let shown = localStorage.getItem('newsletter-popup-shown');
