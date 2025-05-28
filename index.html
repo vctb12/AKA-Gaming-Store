@@ -10,60 +10,68 @@
 <body>
   <header>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      <ul class="nav-links">
+        <li><a href="#products" class="nav-link active">Products</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="checkout.html" class="nav-link">Checkout</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section id="hero">
       <h1>Welcome to AKA Gaming Store</h1>
-      <p>Your one-stop shop for high-end gaming gear in the UAE.</p>
-      <a href="products.html" class="cta-button">Shop Now</a>
+      <p>Your one-stop shop for elite gaming gear in the UAE.</p>
     </section>
 
-    <section class="featured">
+    <section id="products">
       <h2>Featured Products</h2>
-      <ul class="product-list">
-        <li>🎮 <strong>Gaming PC</strong> – <span>AED 4,999 🇦🇪</span></li>
-        <li>🖥️ <strong>Monitor</strong> – <span>AED 999 🇦🇪</span></li>
-        <li>⌨️ <strong>Keyboard</strong> – <span>AED 399 🇦🇪</span></li>
-      </ul>
-    </section>
-  
-    <section class="blog-preview">
-      <h2>📰 Latest from the Blog</h2>
-      <ul>
-        <li><a href="blog.html#setup">Best Gaming Setups in 2025</a></li>
-        <li><a href="blog.html#buildvsbuy">Should You Build or Buy in the UAE?</a></li>
-        <li><a href="blog.html#cooling">Keeping Your PC Cool in Gulf Summer</a></li>
-      </ul>
-      <a href="blog.html" class="cta-button">Read More</a>
+      <div id="product-list">Loading products...</div>
     </section>
 
+    <section id="filter-bar">
+      <label for="search">Search:</label>
+      <input type="text" id="search" placeholder="Search products...">
+    </section>
 
-<!-- Newsletter Signup -->
-<section class="newsletter">
-  <h2>📩 Get new deals straight to your inbox</h2>
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <button type="submit">Subscribe</button>
-  </form>
-</section>
+    <section id="newsletter">
+      <h2>Subscribe to Our Newsletter</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
 
-</main>
+    <section id="blog-preview">
+      <h2>Latest Blog Articles</h2>
+      <div id="blog-list">
+        <article>
+          <h3>Best Gaming Setups in 2025</h3>
+          <p>Discover high-performance setups designed for pros and streamers.</p>
+        </article>
+        <article>
+          <h3>Build or Buy? UAE Rig Tips</h3>
+          <p>Weigh the pros and cons of custom-built vs. prebuilt rigs.</p>
+        </article>
+      </div>
+    </section>
 
-  <footer>
-    <div class="footer-contact">
+    <section id="about">
+      <h2>About AKA Gaming Store</h2>
+      <p>We’re based in the UAE, providing high-end gaming setups, parts, and custom builds across the Gulf. We offer fast delivery and expert support through WhatsApp.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
       <p>📍 Al Ain Computer Center</p>
       <p>📞 WhatsApp: 00971505058609</p>
       <p>✉️ Email: akagaming@store.ae</p>
-    </div>
-    <p class="footer-copy">© 2025 AKA Gaming Store | All rights reserved.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AKA Gaming Store | All rights reserved.</p>
   </footer>
 </body>
 </html>
