@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout - AKA Gaming Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="checkout.html" class="active">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>🧾 Checkout</h1>
+    <form id="checkoutForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required />
+
+      <label for="address">Delivery Address</label>
+      <textarea id="address" required></textarea>
+
+      <label for="payment">Payment Method</label>
+      <select id="payment">
+        <option>Cash on Delivery</option>
+        <option disabled>Card (Coming Soon)</option>
+        <option disabled>Bank Transfer (Coming Soon)</option>
+      </select>
+
+      <label for="promo">Discount Code</label>
+      <input type="text" id="promo" placeholder="Enter code like AKA15" />
+
+      <button type="submit">Place Order</button>
+    </form>
+
+    <section class="summary">
+      <h2>Order Summary</h2>
+      <p>Subtotal: <span id="subtotal">AED 0</span></p>
+      <p>Discount: <span id="discount">AED 0</span></p>
+      <p>VAT: <span id="vat">AED 0</span></p>
+      <p><strong>Total: <span id="total">AED 0</span></strong></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>WhatsApp: 00971505058609 | Email: akagaming@store.ae</p>
+    <p>© 2025 AKA Gaming Store</p>
+  </footer>
+</body>
+</html>

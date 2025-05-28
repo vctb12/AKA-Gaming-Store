@@ -1,14 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Products | AKA Gaming Store</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <h2>Our Products</h2>
-  <div id="product-list">Loading products...</div>
-  <script src="script.js"></script>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Products</h1>
+
+    <!-- 🔍 Filter Bar -->
+    <section class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Search products..." />
+      <select id="brandFilter">
+        <option value="">All Brands</option>
+        <option value="ASUS">ASUS</option>
+        <option value="MSI">MSI</option>
+        <option value="Corsair">Corsair</option>
+      </select>
+      <select id="stockFilter">
+        <option value="">All Stock</option>
+        <option value="in">In Stock</option>
+        <option value="out">Out of Stock</option>
+      </select>
+    </section>
+
+    <!-- 🖥️ Products Grid -->
+    <section id="productList" class="grid"></section>
+  </main>
+
+  <footer>
+    <p>© 2025 AKA Gaming Store | All rights reserved</p>
+  </footer>
 </body>
 </html>
