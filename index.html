@@ -1,74 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AKA Gaming Store</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#products" class="nav-link active">Products</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="checkout.html" class="nav-link">Checkout</a></li>
-      </ul>
-    </nav>
+    <div class="navbar">
+      <div class="logo">AKA Gaming Store</div>
+      <nav>
+        <ul>
+          <li><a href="#products" class="nav-link">Products</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="checkout.html" class="nav-link">Checkout</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="hero">
-      <h1>Welcome to AKA Gaming Store</h1>
-      <p>Your one-stop shop for elite gaming gear in the UAE.</p>
-    </section>
+  <section class="hero">
+    <h1>Welcome to AKA Gaming Store</h1>
+    <p>Your one-stop shop for elite gaming gear in the UAE.</p>
+    <a href="#products" class="btn">Shop Now</a>
+  </section>
 
-    <section id="products">
-      <h2>Featured Products</h2>
-      <div id="product-list">Loading products...</div>
-    </section>
+  <section id="products" class="section">
+    <h2>Featured Products</h2>
+    <input type="text" id="searchInput" placeholder="Search products...">
+    <div id="product-list">Loading products...</div>
+  </section>
 
-    <section id="filter-bar">
-      <label for="search">Search:</label>
-      <input type="text" id="search" placeholder="Search products...">
-    </section>
+  <section class="newsletter section">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
 
-    <section id="newsletter">
-      <h2>Subscribe to Our Newsletter</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" required />
-        <button type="submit">Subscribe</button>
-      </form>
-    </section>
+  <section class="blog-preview section">
+    <h2>Latest Blog Articles</h2>
+    <div class="blog-item">
+      <h3><a href="blog.html#setup">Best Gaming Setups in 2025</a></h3>
+      <p>Discover high-performance setups designed for pros and streamers.</p>
+    </div>
+    <div class="blog-item">
+      <h3><a href="blog.html#build">Build or Buy? UAE Rig Tips</a></h3>
+      <p>Weigh the pros and cons of custom-built vs. prebuilt rigs.</p>
+    </div>
+  </section>
 
-    <section id="blog-preview">
-      <h2>Latest Blog Articles</h2>
-      <div id="blog-list">
-        <article>
-          <h3>Best Gaming Setups in 2025</h3>
-          <p>Discover high-performance setups designed for pros and streamers.</p>
-        </article>
-        <article>
-          <h3>Build or Buy? UAE Rig Tips</h3>
-          <p>Weigh the pros and cons of custom-built vs. prebuilt rigs.</p>
-        </article>
-      </div>
-    </section>
+  <section id="about" class="section">
+    <h2>About AKA Gaming Store</h2>
+    <p>We’re based in the UAE, providing high-end gaming setups, parts, and custom builds across the Gulf. We offer fast delivery and expert support through WhatsApp.</p>
+  </section>
 
-    <section id="about">
-      <h2>About AKA Gaming Store</h2>
-      <p>We’re based in the UAE, providing high-end gaming setups, parts, and custom builds across the Gulf. We offer fast delivery and expert support through WhatsApp.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>📍 Al Ain Computer Center</p>
-      <p>📞 WhatsApp: 00971505058609</p>
-      <p>✉️ Email: akagaming@store.ae</p>
-    </section>
-  </main>
+  <section id="contact" class="section contact">
+    <h2>Contact Us</h2>
+    <p>📍 Al Ain Computer Center</p>
+    <p>📞 WhatsApp: 00971505058609</p>
+    <p>✉️ Email: akagaming@store.ae</p>
+  </section>
 
   <footer>
     <p>&copy; 2025 AKA Gaming Store | All rights reserved.</p>
