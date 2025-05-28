@@ -1,16 +1,1 @@
-[
-  {
-    "id": 1,
-    "name": "RTX 4070 Super",
-    "price": 2999,
-    "stock": 3,
-    "category": "GPU"
-  },
-  {
-    "id": 2,
-    "name": "Razer Gaming Keyboard",
-    "price": 599,
-    "stock": 5,
-    "category": "Accessories"
-  }
-]
+{"products": []}
